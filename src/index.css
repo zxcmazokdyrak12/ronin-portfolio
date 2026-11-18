@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #efe6d4;
+  --color-paper-dark: #e2d6bd;
+  --color-ink: #161412;
+  --color-ink-soft: #3b3632;
+  --font-display: "Prata", "PT Serif", "Noto Serif JP", Georgia, serif;
+  --font-body: "PT Serif", "Noto Serif JP", Georgia, serif;
+  --font-mono: "JetBrains Mono", "Noto Serif JP", ui-monospace, monospace;
+  --font-jp: "Noto Serif JP", serif;
+  --font-comic: "Bangers", "Neucha", sans-serif;
+  --font-hand: "Neucha", "Noto Serif JP", "Comic Sans MS", sans-serif;
+  --font-mincho: "Shippori Mincho B1", "Spectral", serif;
+  --font-spectral: "Spectral", "PT Serif", "Shippori Mincho B1", "Noto Serif JP", serif;
+  --font-brush: "Yuji Boku", "Noto Serif JP", serif;
+}
+
+:root {
+  /* Акцент — киноварь печати. Nayuta Palette меняет его на лету */
+  --accent: #c8102e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--color-paper);
+}
+
+/* Фактура бумаги васи: шум поверх всего, не ловит клики */
+.paper-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Скринтон из манги */
+.halftone {
+  background-image: radial-gradient(var(--color-ink) 1px, transparent 1.3px);
+  background-size: 7px 7px;
+}
+
+/* Панель манги: толстая рамка тушью и жёсткая тень */
+.panel {
+  border: 3px solid var(--color-ink);
+  background: var(--color-paper);
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+
+/* Мазок кистью под заголовками */
+.brush-underline {
+  background-image: linear-gradient(transparent 62%, color-mix(in srgb, var(--accent) 35%, transparent) 62%, color-mix(in srgb, var(--accent) 35%, transparent) 90%, transparent 90%);
+}
+
+/* Печать ханко */
+.hanko {
+  font-family: var(--font-jp);
+  color: var(--accent);
+  border: 3px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px var(--color-paper), inset 0 0 0 4px var(--accent);
+  transition: color 0.8s, border-color 0.8s, box-shadow 0.8s;
+}
+
+.vertical-jp {
+  writing-mode: vertical-rl;
+  font-family: var(--font-jp);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Карточка Chainsaw Chat ---------- */
+.speed-lines {
+  background: repeating-conic-gradient(from 0deg at 50% 55%, #111 0deg 1.6deg, transparent 1.6deg 7deg), #f5f2ea;
+}
+.speed-lines::after {
+  /* светлое «окно» в центре, где лучи сходятся */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 30% 26% at 50% 55%, #f5f2ea 55%, transparent 100%);
+}
+.halftone-fine {
+  background-image: radial-gradient(#111 0.8px, transparent 1.1px);
+  background-size: 5px 5px;
+}
+.sticker {
+  border: 2px solid #111;
+  box-shadow: 0 0 0 3px #fff, 3px 5px 0 3px rgba(0, 0, 0, 0.35);
+}
+.starburst {
+  clip-path: polygon(50% 0%, 61% 22%, 85% 10%, 78% 35%, 100% 45%, 79% 58%, 92% 82%, 66% 76%, 55% 100%, 44% 78%, 18% 92%, 24% 66%, 0% 55%, 20% 42%, 6% 18%, 33% 24%);
+}
+.sfx-text {
+  font-family: var(--font-comic);
+  color: #f5f2ea;
+  -webkit-text-stroke: 2px #111;
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 #111;
+}
+
+/* ---------- Карточка Vagabond Tracker ---------- */
+.washi {
+  background-color: #e2ded4;
+}
+.brush-stroke {
+  display: block;
+  width: 100%;
+  height: 14px;
+}
+@keyframes ink-slash {
+  0% { transform: rotate(-8deg) scaleX(0); opacity: 1; }
+  55% { transform: rotate(-8deg) scaleX(1); opacity: 1; }
+  100% { transform: rotate(-8deg) scaleX(1); opacity: 0; }
+}

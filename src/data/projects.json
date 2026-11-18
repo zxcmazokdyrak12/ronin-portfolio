@@ -1,0 +1,282 @@
+{
+  "points": [
+    {
+      "id": "edo",
+      "type": "project",
+      "place": {
+        "ru": "Эдо",
+        "en": "Edo",
+        "ja": "江戸"
+      },
+      "subtitle": {
+        "ru": "Столица Кода",
+        "en": "Capital of Code",
+        "ja": "コードの都"
+      },
+      "x": 73,
+      "y": 56,
+      "name": "Chainsaw Chat",
+      "tagline": {
+        "ru": "Мессенджер в реальном времени по мотивам Chainsaw Man",
+        "en": "A real-time messenger inspired by Chainsaw Man",
+        "ja": "チェンソーマンをモチーフにしたリアルタイムメッセンジャー"
+      },
+      "desc": {
+        "ru": "Чат с комнатами по инвайт-кодам, голосовыми сообщениями и авторизацией через Google и GitHub. Полностью на TypeScript — от сокетов до интерфейса.",
+        "en": "A chat with invite-code rooms, voice messages and Google/GitHub sign-in. TypeScript all the way — from sockets to UI.",
+        "ja": "招待コード制のルーム、ボイスメッセージ、Google/GitHubログインを備えたチャット。ソケットからUIまで、すべてTypeScriptで書いています。"
+      },
+      "stack": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Framer Motion",
+        "Node.js",
+        "Express",
+        "Socket.io",
+        "PostgreSQL",
+        "Prisma",
+        "Passport.js",
+        "JWT"
+      ],
+      "features": {
+        "ru": [
+          "Комнаты с инвайт-кодами и real-time сообщения на Socket.io",
+          "Индикатор «печатает…» с debounce/throttle, чтобы не спамить сокет",
+          "Голосовые через MediaRecorder API, которые стримятся по сокетам",
+          "OAuth 2.0 (Google / GitHub) + JWT-сессии",
+          "Фронт на Vercel, бэк на Render — с настроенным CORS между ними",
+          "Пасхалки: бензопила на капслок и реакция Почиты"
+        ],
+        "en": [
+          "Invite-code rooms and real-time messaging over Socket.io",
+          "“Typing…” indicator with debounce/throttle so the socket isn’t spammed",
+          "Voice messages via the MediaRecorder API, streamed over sockets",
+          "OAuth 2.0 (Google / GitHub) + JWT sessions",
+          "Frontend on Vercel, backend on Render — with CORS configured between them",
+          "Easter eggs: a chainsaw on Caps Lock and Pochita’s reaction"
+        ],
+        "ja": [
+          "招待コード制ルームとSocket.ioによるリアルタイムメッセージ",
+          "debounce/throttle付きの「入力中…」表示で、ソケットへの過剰送信を防止",
+          "MediaRecorder APIで録音し、ソケットでストリーミングするボイスメッセージ",
+          "OAuth 2.0（Google / GitHub）＋JWTセッション",
+          "フロントはVercel、バックはRender。両者間のCORSも設定済み",
+          "隠し要素：Caps Lockでチェンソー、ポチタのリアクション"
+        ]
+      },
+      "links": {
+        "demo": "https://chainsaw-chat.vercel.app",
+        "repo": "https://github.com/zxcmazokdyrak12/chainsaw-chat"
+      },
+      "seal": {
+        "ru": "Проект защищён печатью Почиты",
+        "en": "Protected by Pochita’s seal",
+        "ja": "ポチタの印で守られています"
+      },
+      "kanji": "鋸",
+      "num": "一"
+    },
+    {
+      "id": "kyoto",
+      "type": "project",
+      "place": {
+        "ru": "Киото",
+        "en": "Kyoto",
+        "ja": "京都"
+      },
+      "subtitle": {
+        "ru": "Додзё Ёсиока",
+        "en": "Yoshioka Dojo",
+        "ja": "吉岡道場"
+      },
+      "x": 49,
+      "y": 57,
+      "name": "Vagabond Anime Tracker",
+      "tagline": {
+        "ru": "Трекер аниме в эстетике манги «Бродяга»",
+        "en": "An anime tracker in the aesthetic of the Vagabond manga",
+        "ja": "漫画『バガボンド』の美学で作ったアニメトラッカー"
+      },
+      "desc": {
+        "ru": "Личный список аниме с поиском по Jikan API и дашбордом статистики. База на чистом SQL без ORM — чтобы руками понимать, что происходит в PostgreSQL.",
+        "en": "A personal anime list with Jikan API search and a stats dashboard. The database runs on raw SQL with no ORM — so I understand by hand what’s happening in PostgreSQL.",
+        "ja": "Jikan APIでの検索と統計ダッシュボードを備えた個人用アニメリスト。ORMを使わず生SQLで書き、PostgreSQLの中で何が起きているかを自分の手で理解できるようにしました。"
+      },
+      "stack": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "pg (raw SQL)",
+        "Jikan API"
+      ],
+      "features": {
+        "ru": [
+          "Свой retry-механизм на 3 попытки для Jikan API: переживает 504 и 429",
+          "PATCH-обновления через COALESCE — меняются только присланные поля",
+          "Каскадное удаление для целостности данных",
+          "Дашборд аналитики на агрегирующих SQL-запросах с анимированной статистикой"
+        ],
+        "en": [
+          "A custom 3-attempt retry mechanism for the Jikan API: survives 504s and 429s",
+          "PATCH updates via COALESCE — only the fields that were sent get changed",
+          "Cascading deletes to keep the data consistent",
+          "Analytics dashboard built on aggregating SQL queries, with animated stats"
+        ],
+        "ja": [
+          "Jikan API向けの独自リトライ機構（3回）：504や429にも耐える",
+          "COALESCEによるPATCH更新：送られた項目だけを変更",
+          "カスケード削除でデータの整合性を維持",
+          "集計SQLクエリによる、アニメーション付きの分析ダッシュボード"
+        ]
+      },
+      "links": {
+        "demo": "https://vagabond-anime-tracker.vercel.app",
+        "repo": "https://github.com/zxcmazokdyrak12/vagabond-anime-tracker"
+      },
+      "seal": {
+        "ru": "Путь меча — путь бесконечной правки",
+        "en": "The way of the sword is the way of endless revision",
+        "ja": "剣の道は、終わりなき推敲の道"
+      },
+      "kanji": "剣",
+      "num": "二"
+    },
+    {
+      "id": "osorezan",
+      "type": "project",
+      "place": {
+        "ru": "Гора Осорэ",
+        "en": "Mount Osore",
+        "ja": "恐山"
+      },
+      "subtitle": {
+        "ru": "Врата в мир мёртвых",
+        "en": "Gate to the land of the dead",
+        "ja": "死者の国への門"
+      },
+      "x": 80,
+      "y": 15,
+      "name": {
+        "ru": "The Mandela Catalogue (fan game)",
+        "en": "The Mandela Catalogue (fan game)",
+        "ja": "The Mandela Catalogue（ファンゲーム）"
+      },
+      "tagline": {
+        "ru": "Бесплатный PSX-хоррор в духе FNAF",
+        "en": "A free PSX horror game in the spirit of FNAF",
+        "ja": "FNAF風の無料PSXホラー"
+      },
+      "desc": {
+        "ru": "Фан-игра по The Mandela Catalogue: выживание против «альтернативов» в стилистике PSX. Исходники открыты.",
+        "en": "A fan game based on The Mandela Catalogue: survive against the “alternates” in PSX style. The source code is open.",
+        "ja": "The Mandela Catalogueのファンゲーム。PSX風の世界で「オルタネイト」から生き延びろ。ソースコードは公開中です。"
+      },
+      "stack": [
+        "Unity",
+        "URP",
+        "C#"
+      ],
+      "features": {
+        "ru": [
+          "PSX-стилизация на URP",
+          "Геймплей в духе FNAF",
+          "Опубликована на itch.io, код — в открытом доступе"
+        ],
+        "en": [
+          "PSX-style rendering on URP",
+          "FNAF-style gameplay",
+          "Published on itch.io, the code is open source"
+        ],
+        "ja": [
+          "URPでのPSX風表現",
+          "FNAF風のゲームプレイ",
+          "itch.ioで公開、コードはオープンソース"
+        ]
+      },
+      "links": {
+        "demo": "https://spookytake.itch.io/the-mandela-catalogue",
+        "repo": "https://github.com/zxcmazokdyrak12/the-mandela-catalogue"
+      },
+      "demoLabel": {
+        "ru": "Играть на itch.io",
+        "en": "Play on itch.io",
+        "ja": "itch.ioで遊ぶ"
+      },
+      "seal": {
+        "ru": "Не открывай дверь, если это не ты",
+        "en": "Don’t open the door if it isn’t you",
+        "ja": "それが自分でないなら、扉を開けるな"
+      },
+      "kanji": "霊",
+      "num": "三"
+    },
+    {
+      "id": "hokkaido",
+      "type": "scripts",
+      "place": {
+        "ru": "Остров Эдзо",
+        "en": "Ezo Island",
+        "ja": "蝦夷地"
+      },
+      "subtitle": {
+        "ru": "Провинция Диких Идей",
+        "en": "Province of Wild Ideas",
+        "ja": "奔放な発想の国"
+      },
+      "x": 21,
+      "y": 22,
+      "name": {
+        "ru": "Мелкие скрипты",
+        "en": "Small scripts",
+        "ja": "小さなスクリプト"
+      },
+      "tagline": {
+        "ru": "Небольшие утилиты, которые живут прямо на этой странице",
+        "en": "Small utilities that live right on this page",
+        "ja": "このページの中で動く小さな道具たち"
+      },
+      "content": [
+        {
+          "name": {
+            "ru": "Час Самурая",
+            "en": "Samurai Hour",
+            "ja": "侍の刻"
+          },
+          "desc": {
+            "ru": "Определяет текущую стражу по старояпонскому счёту времени",
+            "en": "Works out the current watch using the old Japanese way of telling time",
+            "ja": "昔の日本の時刻法で、今が何の刻かを割り出す"
+          },
+          "tech": "JS Date",
+          "action": "time"
+        },
+        {
+          "name": "Regex Blade",
+          "desc": {
+            "ru": "Очистка кода от лишних логов и мусора",
+            "en": "Cleans code of stray logs and junk",
+            "ja": "余計なログやゴミをコードから一掃"
+          },
+          "tech": "Regex"
+        },
+        {
+          "name": "Nayuta Palette",
+          "desc": {
+            "ru": "Генератор гармоничных палитр — перекрашивает этот сайт",
+            "en": "A harmonious palette generator — it repaints this site",
+            "ja": "調和のとれた配色ジェネレーター。このサイトを塗り替えます"
+          },
+          "tech": "HSL, Math.random",
+          "action": "palette"
+        }
+      ],
+      "kanji": "筆",
+      "num": "四"
+    }
+  ]
+}

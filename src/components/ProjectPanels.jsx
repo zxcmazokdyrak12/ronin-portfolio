@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Code2, ScrollText } from 'lucide-react';
 import ChatCard from './cards/ChatCard';
 import TrackerCard from './cards/TrackerCard';
+import MandelaCard from './cards/MandelaCard';
 import { useLang } from '../i18n/LangContext';
 
-// У чата и трекера свой стиль — как у самих приложений
-const CUSTOM_CARDS = { edo: ChatCard, kyoto: TrackerCard };
+// У каждого проекта свой стиль — как у самих приложений
+const CUSTOM_CARDS = { edo: ChatCard, kyoto: TrackerCard, osorezan: MandelaCard };
 
 const reveal = (i) => ({
   initial: { opacity: 0, y: 40 },

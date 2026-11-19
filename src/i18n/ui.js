@@ -123,6 +123,32 @@ export const UI = {
     credit: { ru: '«Бродяга» © Такэхико Иноуэ', en: 'Vagabond © Takehiko Inoue', ja: '『バガボンド』© 井上雄彦' },
   },
 
+  mandela: {
+    ticker: {
+      ru: 'ЭКСТРЕННОЕ ОПОВЕЩЕНИЕ · Если вы видите кого-то, кто выглядит как вы, — не открывайте дверь · Не смотрите на них · Оставайтесь дома · ',
+      en: 'EMERGENCY ALERT · If you see someone who looks like you, do not open the door · Do not look at them · Stay indoors · ',
+      ja: '緊急警報 · 自分にそっくりな誰かを見ても、扉を開けないでください · 目を合わせないで · 屋内にとどまってください · ',
+    },
+    hint: { ru: 'Двигай мышью — это фонарик', en: 'Move the mouse — it’s a flashlight', ja: 'マウスを動かして — それが懐中電灯' },
+    menu: {
+      newTape: { ru: 'играть на itch.io', en: 'play on itch.io', ja: 'itch.ioで遊ぶ' },
+      continue: { ru: 'исходный код', en: 'source code', ja: 'ソースコード' },
+      settings: { ru: 'стек', en: 'stack', ja: '技術スタック' },
+      credits: { ru: 'весь свиток', en: 'full scroll', ja: '巻物を読む' },
+      goodbye: { ru: 'не нажимай', en: 'don’t press', ja: '押すな' },
+    },
+    tapes: { ru: 'Кассеты', en: 'Tapes', ja: 'テープ' },
+    tapesHint: { ru: 'нажми, чтобы посмотреть', en: 'click to watch', ja: '押して再生' },
+    tapeAlt: { ru: 'Кадр из игры: {name}', en: 'Game screenshot: {name}', ja: 'ゲーム画面：{name}' },
+    tapeNames: {
+      living: { ru: 'гостиная, день 2', en: 'living room, day 2', ja: 'リビング・2日目' },
+      garage: { ru: 'гараж, ночь 3', en: 'garage, night 3', ja: 'ガレージ・3日目の夜' },
+      hallway: { ru: 'коридор, ночь 1', en: 'hallway, night 1', ja: '廊下・1日目の夜' },
+    },
+    ended: { ru: 'кассета закончилась', en: 'tape ended', ja: 'テープ終了' },
+    logoAlt: { ru: 'Логотип игры The Mandela Catalogue', en: 'The Mandela Catalogue game logo', ja: 'The Mandela Catalogueのロゴ' },
+  },
+
   arsenal: [
     { kanji: '表', title: { ru: 'Фронтенд', en: 'Frontend', ja: 'フロントエンド' }, items: ['React', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS', 'Framer Motion'] },
     { kanji: '裏', title: { ru: 'Бэкенд', en: 'Backend', ja: 'バックエンド' }, items: ['Node.js', 'Express', 'Socket.io', 'REST API', 'Passport.js', 'OAuth 2.0 / JWT'] },

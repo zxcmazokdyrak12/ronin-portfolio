@@ -25,6 +25,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Стикеры и иероглифы специально вылезают за края — но горизонтальной прокрутки быть не должно */
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   background-color: var(--color-paper);
@@ -136,4 +142,83 @@ body {
   0% { transform: rotate(-8deg) scaleX(0); opacity: 1; }
   55% { transform: rotate(-8deg) scaleX(1); opacity: 1; }
   100% { transform: rotate(-8deg) scaleX(1); opacity: 0; }
+}
+
+/* ---------- Карточка The Mandela Catalogue ---------- */
+.mandela-card {
+  --fx: 30%;
+  --fy: 40%;
+  --fr: clamp(150px, 24vw, 280px);
+}
+.flash-dark {
+  background: radial-gradient(circle var(--fr) at var(--fx) var(--fy), rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 0.92) 100%);
+  transition: opacity 0.4s;
+}
+.flash-glow {
+  background: radial-gradient(circle var(--fr) at var(--fx) var(--fy), rgba(255, 228, 175, 0.1), transparent 70%);
+  mix-blend-mode: screen;
+}
+/* Кто ходит с клавиатуры или не любит анимацию — получает свет без фонарика */
+.mandela-card.is-lit .flash-dark,
+.mandela-card.is-lit .flash-glow,
+.mandela-card:has(:focus-visible) .flash-dark {
+  opacity: 0;
+}
+
+.film-grain {
+  opacity: 0.13;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  animation: grain 0.6s steps(6) infinite;
+}
+@keyframes grain {
+  0% { background-position: 0 0; }
+  20% { background-position: -40px 30px; }
+  40% { background-position: 30px -50px; }
+  60% { background-position: -60px -20px; }
+  80% { background-position: 50px 40px; }
+  100% { background-position: 0 0; }
+}
+
+.eas-ticker {
+  animation: eas 40s linear infinite;
+}
+@keyframes eas {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* VHS-кадр: скан-линии, лёгкое размытие цвета, полоса трекинга при наведении */
+.vhs-img {
+  filter: saturate(0.85) contrast(1.05);
+  transition: filter 0.3s;
+}
+.vhs-scan {
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.28) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+}
+.vhs-band {
+  top: -10%;
+  opacity: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.22), transparent);
+  filter: blur(1px);
+  pointer-events: none;
+}
+.vhs-frame:hover .vhs-img,
+.vhs-frame:focus-visible .vhs-img {
+  animation: vhs-jitter 0.35s steps(2) infinite;
+  filter: saturate(1.2) contrast(1.15) drop-shadow(2px 0 0 rgba(255, 0, 60, 0.45)) drop-shadow(-2px 0 0 rgba(0, 200, 255, 0.4));
+}
+.vhs-frame:hover .vhs-band,
+.vhs-frame:focus-visible .vhs-band {
+  animation: vhs-band 1.6s linear infinite;
+}
+@keyframes vhs-jitter {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-2px, 1px); }
+  100% { transform: translate(1px, -1px); }
+}
+@keyframes vhs-band {
+  0% { top: -10%; opacity: 0.9; }
+  100% { top: 110%; opacity: 0.9; }
 }

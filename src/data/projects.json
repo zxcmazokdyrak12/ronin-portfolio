@@ -216,6 +216,78 @@
       "num": "三"
     },
     {
+      "id": "kasukabe",
+      "type": "project",
+      "kanji": "坑",
+      "num": "四",
+      "place": {
+        "ru": "Касукабэ",
+        "en": "Kasukabe",
+        "ja": "春日部"
+      },
+      "subtitle": {
+        "ru": "Подземный коллектор",
+        "en": "Underground floodway",
+        "ja": "地下放水路"
+      },
+      "x": 79,
+      "y": 47,
+      "name": "MAINLINE",
+      "tagline": {
+        "ru": "Пять ночей одному под землёй. Держи станцию. Вернись домой к дочке.",
+        "en": "Five nights alone under the ground. Keep the station running. Get home to your daughter.",
+        "ja": "地下で独り、五つの夜。駅を動かし続けろ。娘の待つ家へ帰れ。"
+      },
+      "desc": {
+        "ru": "PSX-хоррор от первого лица. Ты — Макс, ночной инженер старой подземной насосной станции «Узел-4». На смену больше никто не вышел: держи давление, корми генератор и не прислушивайся к тому, что шевелится в вентиляции.",
+        "en": "A first-person PSX horror. You are Max, the night engineer at an old underground pumping station, Junction-4. Nobody else came in for the shift: keep the pressure up, feed the generator, and try not to listen to what moves in the vents.",
+        "ja": "一人称のPSXホラー。君は古い地下ポンプ場「ジャンクション4」の夜勤技師マックス。誰もシフトに来なかった。圧力を保ち、発電機に燃料を足し、通気口で動く何かに耳を澄ませるな。"
+      },
+      "features": {
+        "ru": [
+          "Три контура давления, вентили и генератор, которому нельзя дать заглохнуть",
+          "Вентиляцию заколачиваешь листами стали, в затопленный сектор идёшь в противогазе",
+          "Прячься в шкафчиках, отбивайся ключом, ломом и гвоздемётом — или беги",
+          "5 ночей, 1–1,5 часа, полная озвучка, катсцены и настоящий финал",
+          "PS1-графика: low-poly, дизеринг и зерно"
+        ],
+        "en": [
+          "Three pressure circuits, valves, and a generator you can’t let die",
+          "Nail steel sheets over the vents, wade into the flooded sector in a gas mask",
+          "Hide in lockers, fight back with a wrench, a crowbar and a nail gun — or run",
+          "5 nights, 1–1.5 hours, full voice acting, cutscenes and a real ending",
+          "PS1-style low-poly graphics with dithering and grain"
+        ],
+        "ja": [
+          "三つの圧力回路、バルブ、止めてはならない発電機",
+          "通気口は鋼板で打ち付け、浸水区画にはガスマスクで",
+          "ロッカーに隠れ、レンチ・バール・釘打ち機で反撃するか、逃げるか",
+          "5夜・約1〜1.5時間・フルボイス・カットシーン・本当のエンディング",
+          "ディザリングとグレインのPS1風ローポリ"
+        ]
+      },
+      "stack": [
+        "Unity",
+        "C#",
+        "Blender",
+        "ElevenLabs"
+      ],
+      "links": {
+        "demo": "https://spookytake.itch.io/mainline",
+        "repo": "https://github.com/zxcmazokdyrak12/mainline"
+      },
+      "demoLabel": {
+        "ru": "Скачать на itch.io",
+        "en": "Download on itch.io",
+        "ja": "itch.ioでダウンロード"
+      },
+      "seal": {
+        "ru": "Узел-4 должен работать",
+        "en": "Junction-4 has to keep running",
+        "ja": "ジャンクション4を止めるな"
+      }
+    },
+    {
       "id": "hokkaido",
       "type": "scripts",
       "place": {
@@ -319,7 +391,7 @@
         }
       ],
       "kanji": "筆",
-      "num": "四"
+      "num": "五"
     }
   ]
 }

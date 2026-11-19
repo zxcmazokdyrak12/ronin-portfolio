@@ -222,3 +222,64 @@ body {
   0% { top: -10%; opacity: 0.9; }
   100% { top: 110%; opacity: 0.9; }
 }
+
+/* ---------- Карточка MAINLINE ---------- */
+.ml-ticks {
+  background: repeating-linear-gradient(to top, transparent 0 calc(10% - 1px), rgba(217, 203, 182, 0.18) calc(10% - 1px) 10%);
+  pointer-events: none;
+  z-index: 1;
+}
+.ml-blink {
+  animation: ml-blink 0.8s steps(2) infinite;
+}
+@keyframes ml-blink {
+  50% { opacity: 0.25; }
+}
+/* Мало топлива — свет на пульте подмигивает */
+.ml-console.is-flicker {
+  animation: ml-flicker 2.2s infinite;
+}
+@keyframes ml-flicker {
+  0%, 100% { filter: brightness(1); }
+  42% { filter: brightness(1); }
+  44% { filter: brightness(0.45); }
+  46% { filter: brightness(0.95); }
+  48% { filter: brightness(0.55); }
+  52% { filter: brightness(1); }
+}
+/* Авария — медленная красная пульсация (без резких вспышек) */
+.ml-console.is-alarm {
+  animation: ml-alarm 1.6s ease-in-out infinite;
+}
+@keyframes ml-alarm {
+  0%, 100% { box-shadow: inset 0 0 0 0 rgba(224, 38, 27, 0); }
+  50% { box-shadow: inset 0 0 60px 6px rgba(224, 38, 27, 0.45); }
+}
+.ml-kenburns {
+  animation: ml-kenburns 26s ease-in-out infinite alternate;
+  transform-origin: 50% 40%;
+}
+@keyframes ml-kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+/* Дизеринг как в игре: мелкая шахматка поверх баннера */
+.ml-dither {
+  background-image: repeating-conic-gradient(rgba(0, 0, 0, 0.22) 0% 25%, transparent 0% 50%);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+/* Камеры: серо-зелёный мониторный вид, по наведению — живой цвет */
+.ml-cam-img {
+  filter: grayscale(0.85) sepia(0.25) hue-rotate(50deg) contrast(1.15) brightness(0.9);
+  transition: filter 0.4s, transform 0.6s;
+}
+.ml-cam:hover .ml-cam-img,
+.ml-cam:focus-visible .ml-cam-img {
+  filter: none;
+  transform: scale(1.04);
+}
+.ml-rec {
+  animation: ml-blink 1.2s steps(2) infinite;
+}

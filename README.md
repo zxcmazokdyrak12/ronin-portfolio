@@ -11,6 +11,7 @@ Full-stack developer portfolio styled as an ink-and-paper manga page, on top of 
 | 鋸 | Edo | [Chainsaw Chat](https://chainsaw-chat.vercel.app) — real-time messenger · [code](https://github.com/zxcmazokdyrak12/chainsaw-chat) | TypeScript, React, Socket.io, Express, PostgreSQL, Prisma |
 | 剣 | Kyoto | [Vagabond Anime Tracker](https://vagabond-anime-tracker.vercel.app) — anime tracker · [code](https://github.com/zxcmazokdyrak12/vagabond-anime-tracker) | React, Express, PostgreSQL (raw SQL), Jikan API |
 | 霊 | Mount Osore | [The Mandela Catalogue fan game](https://spookytake.itch.io/the-mandela-catalogue) — PSX horror · [code](https://github.com/zxcmazokdyrak12/the-mandela-catalogue) | Unity, URP, C# |
+| 坑 | Kasukabe | [MAINLINE](https://spookytake.itch.io/mainline) — PSX horror about a night shift underground · [code](https://github.com/zxcmazokdyrak12/mainline) | Unity, C#, Blender |
 
 ## What's inside
 

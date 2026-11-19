@@ -1,7 +1,7 @@
 // Свежие коммиты из моих репозиториев. Ответ кэшируется на CDN Vercel на 15 минут,
 // поэтому GitHub API дёргается редко и в лимиты без токена мы не упираемся
 const OWNER = 'zxcmazokdyrak12';
-const REPOS = ['chainsaw-chat', 'vagabond-anime-tracker', 'ronin-portfolio', 'the-mandela-catalogue'];
+const REPOS = ['chainsaw-chat', 'vagabond-anime-tracker', 'ronin-portfolio', 'the-mandela-catalogue', 'mainline'];
 const LIMIT = 10;
 
 async function repoCommits(repo, headers) {

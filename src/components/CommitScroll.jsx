@@ -9,6 +9,7 @@ const REPO_SEALS = {
   'vagabond-anime-tracker': { kanji: '剣', label: 'tracker' },
   'ronin-portfolio': { kanji: '浪', label: 'portfolio' },
   'the-mandela-catalogue': { kanji: '霊', label: 'mandela' },
+  mainline: { kanji: '坑', label: 'mainline' },
 };
 
 const LOCALES = { ru: 'ru-RU', en: 'en-US', ja: 'ja-JP' };

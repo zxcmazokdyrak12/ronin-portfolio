@@ -29,7 +29,7 @@ export const UI = {
     cta: { ru: 'Смотреть проекты', en: 'See projects', ja: '作品を見る' },
     stats: [
       { value: '2', label: { ru: 'фуллстак-приложения в проде', en: 'full-stack apps in production', ja: '本番稼働中のフルスタックアプリ' } },
-      { value: '1', label: { ru: 'игра на itch.io', en: 'game on itch.io', ja: 'itch.ioで公開中のゲーム' } },
+      { value: '2', label: { ru: 'игры на itch.io', en: 'games on itch.io', ja: 'itch.ioで公開中のゲーム' } },
       { value: '∞', label: { ru: 'правок на пути меча', en: 'refactors on the way of the sword', ja: '剣の道の推敲' } },
     ],
   },
@@ -147,6 +147,43 @@ export const UI = {
     },
     ended: { ru: 'кассета закончилась', en: 'tape ended', ja: 'テープ終了' },
     logoAlt: { ru: 'Логотип игры The Mandela Catalogue', en: 'The Mandela Catalogue game logo', ja: 'The Mandela Catalogueのロゴ' },
+  },
+
+  mainline: {
+    console: { ru: 'Пульт станции «Узел-4»', en: 'Junction-4 station console', ja: 'ジャンクション4 制御盤' },
+    intro: {
+      ru: 'Начальник отдаёт тебе ключ-карту и уезжает домой. До 06:00 держи давление в трёх контурах и не дай генератору заглохнуть.',
+      en: 'Your boss hands you the key card and goes home. Until 06:00, keep pressure in three circuits and don’t let the generator die.',
+      ja: '上司がキーカードを渡して帰っていく。6時まで三つの回路の圧力を保ち、発電機を止めるな。',
+    },
+    start: { ru: 'Взять ключ-карту', en: 'Take the key card', ja: 'キーカードを受け取る' },
+    circuit: { ru: 'Контур {c}', en: 'Circuit {c}', ja: '回路{c}' },
+    valve: { ru: 'Вентиль {c}', en: 'Valve {c}', ja: 'バルブ{c}' },
+    generator: { ru: 'Генератор', en: 'Generator', ja: '発電機' },
+    refuel: { ru: 'Заправить', en: 'Refuel', ja: '給油' },
+    low: { ru: 'НИЗКОЕ', en: 'LOW', ja: '低下' },
+    keys: { ru: 'Клавиши: 1 · 2 · 3 — вентили, F — топливо', en: 'Keys: 1 · 2 · 3 — valves, F — fuel', ja: 'キー：1・2・3 バルブ、F 燃料' },
+    failPressure: { ru: 'Давление в контуре {c} упало. Свет гаснет.', en: 'Circuit {c} lost pressure. The lights go out.', ja: '回路{c}の圧力が落ちた。明かりが消える。' },
+    failFuel: { ru: 'Генератор заглох. В темноте что-то шевелится.', en: 'The generator died. Something moves in the dark.', ja: '発電機が止まった。暗闇で何かが動く。' },
+    retry: { ru: 'Ещё одна смена', en: 'Another shift', ja: 'もう一度シフトへ' },
+    done: { ru: 'Смена окончена · 06:00', en: 'Shift over · 06:00', ja: 'シフト終了 · 06:00' },
+    doneLine: { ru: 'Она будет спать. Или стоять у окна, как всегда.', en: '', ja: '寝ているだろう。それとも、いつものように窓辺に。' },
+    playReal: { ru: 'Пройти настоящие пять ночей', en: 'Play the real five nights', ja: '本物の五夜を遊ぶ' },
+    cctv: { ru: 'Камеры наблюдения', en: 'Security cameras', ja: '監視カメラ' },
+    cctvHint: { ru: 'нажми, чтобы развернуть', en: 'click to expand', ja: '押して拡大' },
+    camAlt: { ru: 'Кадр из игры: {name}', en: 'Game screenshot: {name}', ja: 'ゲーム画面：{name}' },
+    cams: {
+      corridor: { ru: 'коридор B', en: 'corridor B', ja: '廊下B' },
+      vent: { ru: 'вентшахта', en: 'vent shaft', ja: '通気口' },
+      locker: { ru: 'раздевалка', en: 'locker room', ja: 'ロッカー室' },
+      sector: { ru: 'затопленный сектор', en: 'flooded sector', ja: '浸水区画' },
+    },
+    warning: {
+      ru: 'Внимание: мат, кровь, скримеры, мигающий красный свет.',
+      en: 'Content warning: strong language, blood, jump scares, flashing red lights.',
+      ja: '注意：暴言・流血・ジャンプスケア・赤い点滅光。',
+    },
+    bannerAlt: { ru: 'Баннер игры MAINLINE', en: 'MAINLINE game banner', ja: 'MAINLINEのバナー' },
   },
 
   arsenal: [

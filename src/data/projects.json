@@ -258,11 +258,12 @@
         {
           "name": "Regex Blade",
           "desc": {
-            "ru": "Очистка кода от лишних логов и мусора",
-            "en": "Cleans code of stray logs and junk",
-            "ja": "余計なログやゴミをコードから一掃"
+            "ru": "Срезает из кода console.log, debugger, хвостовые пробелы и лишние пустые строки — и показывает, что именно срублено",
+            "en": "Cuts console.log, debugger, trailing spaces and extra blank lines out of code — and shows exactly what was cut",
+            "ja": "コードから console.log・debugger・末尾の空白・余分な空行を斬り、何を斬ったかを見せる"
           },
-          "tech": "Regex"
+          "tech": "RegExp, Framer Motion",
+          "action": "blade"
         },
         {
           "name": "Nayuta Palette",
@@ -273,6 +274,48 @@
           },
           "tech": "HSL, Math.random",
           "action": "palette"
+        },
+        {
+          "name": {
+            "ru": "Имя ронина",
+            "en": "Ronin name",
+            "ja": "浪人の名"
+          },
+          "desc": {
+            "ru": "Превращает ник в имя эпохи Эдо: иероглифы, чтение, смысл и прозвище",
+            "en": "Turns a nickname into an Edo-era name: kanji, reading, meaning and an epithet",
+            "ja": "ニックネームを江戸時代の名前に：漢字・読み・意味・二つ名"
+          },
+          "tech": "FNV-1a hash",
+          "action": "name"
+        },
+        {
+          "name": {
+            "ru": "Дуэль с отладчиком",
+            "en": "Duel with the debugger",
+            "ja": "デバッガーとの決闘"
+          },
+          "desc": {
+            "ru": "Игра на реакцию со свитком рекордов: серверная функция на Vercel пишет результаты в PostgreSQL",
+            "en": "A reaction game with a scroll of records: a Vercel serverless function writes results to PostgreSQL",
+            "ja": "記録の巻物つき反応ゲーム。Vercelのサーバーレス関数が結果をPostgreSQLに書き込む"
+          },
+          "tech": "Vercel Functions, Neon Postgres",
+          "action": "duel"
+        },
+        {
+          "name": {
+            "ru": "Свиток коммитов",
+            "en": "Commit scroll",
+            "ja": "コミットの巻物"
+          },
+          "desc": {
+            "ru": "Свежие коммиты из моих репозиториев через GitHub API, с кэшем на CDN",
+            "en": "Fresh commits from my repositories via the GitHub API, cached on the CDN",
+            "ja": "GitHub API経由の最新コミット。CDNでキャッシュ"
+          },
+          "tech": "GitHub API, CDN cache",
+          "action": "commits"
         }
       ],
       "kanji": "筆",

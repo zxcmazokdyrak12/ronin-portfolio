@@ -86,7 +86,7 @@ function App() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionTitle kanji="筆" title={t('sections.workshop.title')} caption={`${tr(scripts.place)} · ${tr(scripts.subtitle)}`} />
               <p className="-mt-4 mb-8 max-w-xl text-lg italic text-ink-soft">{tr(scripts.tagline)}</p>
-              <ul className="grid gap-6 md:grid-cols-3">
+              <ul className="grid gap-6 md:grid-cols-3 md:grid-flow-dense">
                 {scripts.content.map((s) => (
                   <ScriptCard
                     key={s.tech}

@@ -16,18 +16,37 @@ Full-stack developer portfolio styled as an ink-and-paper manga page, on top of 
 
 - **Each project card looks like the project itself.** Chainsaw Chat is a black-and-white manga page with speed lines and draggable manga stickers. The tracker card is washi paper and ink: hanging scrolls with app screenshots, manga panels, and a sword cut — drag the mouse across the card and it splits in two.
 - **Three languages** (RU / EN / 日本語) with no i18n library: a small React context, a UI dictionary (`src/i18n/ui.js`) and localized project data (`src/data/projects.json`). The choice is saved in `localStorage`.
-- **Small live scripts:** the current hour in the old Japanese time system, and a palette generator that repaints the whole site.
+- **Workshop of live tools:** the hour in the old Japanese time system, a palette that repaints the site, Regex Blade (cuts debug junk out of code), a ronin-name generator, a reaction duel with a database leaderboard, and a scroll of my latest commits.
 - Accessible modals (Esc, focus return, scroll lock), `prefers-reduced-motion` support, compressed WebP images.
+
+## Backend
+
+Two Vercel serverless functions live in `api/`:
+
+- `api/duel.js` — the duel leaderboard. `GET` returns the ten best reactions, `POST` validates and stores a result in PostgreSQL (Neon) through `@neondatabase/serverless`. Reaction times outside 100–1500 ms, bad names and rapid repeats are rejected.
+- `api/commits.js` — latest commits from my repositories via the GitHub API, cached on Vercel's CDN for 15 minutes.
+
+Environment: `DATABASE_URL` (Neon connection string). Optional: `GITHUB_TOKEN` for a higher GitHub rate limit.
+
+```sql
+CREATE TABLE duel_scores (
+  id serial PRIMARY KEY,
+  name varchar(20) NOT NULL CHECK (char_length(name) BETWEEN 1 AND 20),
+  ms integer NOT NULL CHECK (ms BETWEEN 100 AND 1500),
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+```
 
 ## Stack
 
-React 19, Vite, Tailwind CSS 4, Framer Motion, lucide-react. Deployed on Vercel.
+React 19, Vite, Tailwind CSS 4, Framer Motion, lucide-react · Vercel Functions, Neon PostgreSQL, GitHub API. Deployed on Vercel.
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev
+npm run dev        # frontend only
+npx vercel dev     # frontend + api/ functions
 ```
 
 Build: `npm run build` · lint: `npm run lint`.

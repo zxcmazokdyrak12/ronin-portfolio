@@ -1,18 +1,27 @@
 import { RotateCcw, Sparkles } from 'lucide-react';
 import { useLang } from '../i18n/LangContext';
+import RegexBlade from './RegexBlade';
+import RoninName from './RoninName';
+import Duel from './Duel';
+import CommitScroll from './CommitScroll';
+
+// Сколько колонок сетки занимает инструмент
+const SPAN = { blade: 'md:col-span-3', duel: 'md:col-span-2' };
+// Инструменты, у которых своё большое тело, а не одна кнопка внизу
+const TOOLS = ['blade', 'name', 'duel', 'commits'];
 
 export default function ScriptCard({ script, samuraiHour, onPalette, onResetPalette, paletteChanged }) {
   const { t, tr } = useLang();
 
   return (
-    <li className="panel p-5 flex flex-col">
+    <li className={`panel p-5 flex flex-col ${SPAN[script.action] ?? ''}`}>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="font-display text-2xl">{tr(script.name)}</h3>
         <span className="font-mono text-[10px] uppercase tracking-widest text-ink-soft">{script.tech}</span>
       </div>
       <p className="mt-2 leading-relaxed">{tr(script.desc)}</p>
 
-      <div className="mt-auto pt-5">
+      <div className={TOOLS.includes(script.action) ? 'pt-1' : 'mt-auto pt-5'}>
         {script.action === 'palette' && (
           <div className="flex gap-2">
             <button
@@ -35,6 +44,11 @@ export default function ScriptCard({ script, samuraiHour, onPalette, onResetPale
             )}
           </div>
         )}
+
+        {script.action === 'blade' && <RegexBlade />}
+        {script.action === 'name' && <RoninName />}
+        {script.action === 'duel' && <Duel />}
+        {script.action === 'commits' && <CommitScroll />}
 
         {script.action === 'time' && (
           <span className="inline-block px-3 py-1.5 bg-ink text-paper font-mono text-xs uppercase tracking-wider">
